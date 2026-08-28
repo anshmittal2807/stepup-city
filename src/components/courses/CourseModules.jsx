@@ -5,7 +5,7 @@ const defaultModules = defaultCourses[0].modules
 function CourseModules({ modules = defaultModules }) {
   return (
     <section id="courses" className="py-16 md:py-section-gap bg-surface-container-low px-margin-mobile md:px-margin-desktop">
-      <div>
+      <div className="max-w-container-max mx-auto">
         <div className="text-center mb-12 bg-primary-container text-white p-8 rounded-2xl">
           <h2 className="font-headline-lg text-headline-lg mb-4">Course Modules</h2>
           <div className="w-20 h-1 bg-white/60 mx-auto rounded-full"></div>
