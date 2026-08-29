@@ -1,4 +1,4 @@
 const heroImage =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBvN5kqkP1lSgJjRwLrieCP9tozjiJYoeb5QKT2BSooxOqQnoxrTUT-wN8qCKdG-9Sy7kfVlEpuXEtfwj4H7iLJLU52pa80vTTmVnF2PKoyNFgjOAkZEo2QawnIS_DmeGyrHXbR2vEYHBq8xh_LGFPqRINSAcfC5bdcUuHxdTY_6BaJNT-PdByvZiVwpVF1O5cbyPSCsuRfRWiSy9MEG3GLuif6Yu16BKvxXEwXf0nPMo75dd0wkLQ'
+  '/images/hero-course.jpg'
 
 export default heroImage

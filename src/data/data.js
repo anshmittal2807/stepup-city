@@ -3,10 +3,9 @@
 // to localStorage so the admin panel can add / edit / delete courses
 // without a backend. Replace these helpers with API calls later.
 
-const STORAGE_KEY = 'stepup-city-courses'
+const STORAGE_KEY = 'stepup-city-courses-v2'
 
-const defaultHeroImage =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBvN5kqkP1lSgJjRwLrieCP9tozjiJYoeb5QKT2BSooxOqQnoxrTUT-wN8qCKdG-9Sy7kfVlEpuXEtfwj4H7iLJLU52pa80vTTmVnF2PKoyNFgjOAkZEo2QawnIS_DmeGyrHXbR2vEYHBq8xh_LGFPqRINSAcfC5bdcUuHxdTY_6BaJNT-PdByvZiVwpVF1O5cbyPSCsuRfRWiSy9MEG3GLuif6Yu16BKvxXEwXf0nPMo75dd0wkLQ'
+const defaultHeroImage = '/images/hero-course.jpg'
 
 export const defaultCourses = [
   {
@@ -70,21 +69,21 @@ export const defaultCourses = [
         role: 'Senior SEO Specialist',
         experience: '10+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuAUMUjwjPkSjetFLnilRMhyOZ20IqDDuAIZzJYM9gLGhnEanI2m5O-_zRoAxEHG985ztNS3kYJBrG_t0QVzazqQL-8wb-x0IZhUcR9zIezkiZdvFTj89ULsTB4i6is_ferq59akXdxzP80QsGPrb76iXJlXxFeAY73uSctXkiZ-_DFDWISDQA6RxLiXI87kcCljS4iHE6Mju2MKw9Jc0kyYvjKKuFuUdG4crC4tW1DU-Z6FHz-bFkQ',
+          '/images/mentors/rahul.jpg',
       },
       {
         name: 'Priya Singh',
         role: 'Performance Marketing Lead',
         experience: '8+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCcYps3hlGHfpL3gLOypV3Lx-DsgE_13ZcmbhR-gnqghGUK3LVQ2KMk93AMmuty_GirEL0HhbQPRo7WNAKCHNb_DHkM6Jtp_AnSb9yOnmqEaJAw1VfX9QwqHH_UYNpIw33W8AWLkx_8dbbZiE6TrcF8nGlsy_G6SPlsA2goCgIZ0XjxlCLk5XOM194aARcQW80tiV2k2m9rHs67v7Z9l25HAHWEdhnnibJC192D9ArGQF6LJLZakI0',
+          '/images/mentors/priya.jpg',
       },
       {
         name: 'Amit Patel',
         role: 'Social Media Strategist',
         experience: '7+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuAbnMYUCRZZLJdwPCptXpZFeGKpjTQA68ShQ0Ek_gmqi3aWL2uyz5i4t1FYBMX6T-95Mk-GL0qcpDFJo3pt1gVqROvT6bdXrl6_SUSa7nqfPuRu_VnNXKf-Vp6x-1JXu8D5fQJw7ZqeiKW2FIHh6FiMDtHYaa_uG9yHKLjeXLeqz7AtNWQ7e3VI5u0sG59BJFxuhhAEwzqsQjhw1gozEaj4eLTrm77aYJqA6fTLeJxJrsyLm-YK710',
+          '/images/mentors/amit.jpg',
       },
     ],
     gains: [
@@ -104,25 +103,28 @@ export const defaultCourses = [
         description: 'Understand how agencies operate, from client onboarding to reporting and optimization.',
       },
     ],
-    gainsImage: defaultHeroImage,
+    gainsImage: '/images/gains-course1.jpg',
     successStories: [
       {
         quote:
           '"The practical approach to learning SEO and Google Ads really helped me secure my first job as a digital marketer."',
         name: 'Sneha K.',
         role: 'Digital Marketing Executive',
+        image: '/images/students/sneha.jpg',
       },
       {
         quote:
           '"I started my own freelance business right after completing the course. The mentors were incredibly supportive."',
         name: 'Ravi V.',
         role: 'Freelance Marketer',
+        image: '/images/students/ravi.jpg',
       },
       {
         quote:
           '"Best decision I made for my career. The 100% placement support is genuine and helped me land a great role."',
         name: 'Anjali M.',
         role: 'Social Media Manager',
+        image: '/images/students/anjali.jpg',
       },
     ],
     modules: [
@@ -184,7 +186,7 @@ export const defaultCourses = [
         'Go from zero to SEO expert. Learn keyword research, technical SEO, link building, and content strategy through live projects and real client websites.',
       ctaLabel: 'Book a Free Audit',
       ctaHref: '#enroll',
-      image: defaultHeroImage,
+      image: '/images/hero-seo.jpg',
       imageAlt: 'Students learning SEO strategy in a live bootcamp session',
       floatingStat: { value: '+180%', label: 'Organic Traffic' },
       stats: [
@@ -225,21 +227,21 @@ export const defaultCourses = [
         role: 'SEO Director, ex-Google Partner Agency',
         experience: '12+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuAUMUjwjPkSjetFLnilRMhyOZ20IqDDuAIZzJYM9gLGhnEanI2m5O-_zRoAxEHG985ztNS3kYJBrG_t0QVzazqQL-8wb-x0IZhUcR9zIezkiZdvFTj89ULsTB4i6is_ferq59akXdxzP80QsGPrb76iXJlXxFeAY73uSctXkiZ-_DFDWISDQA6RxLiXI87kcCljS4iHE6Mju2MKw9Jc0kyYvjKKuFuUdG4crC4tW1DU-Z6j7yJ1yFizF7OmlVZb9j8ejKb-Sw',
+          '/images/mentors/arjun.jpg',
       },
       {
         name: 'Neha Kapoor',
         role: 'Technical SEO Lead',
         experience: '9+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCcYps3hlGHfpL3gLOV3x-DsgE_13ZcmbhR-gnqghGUK3LVQ2KMk93AMmuty_GirEL0HhbQRW7NAKCHNb_DHkM20Z20Tbt_AnSb9yOnRSaEaJAw1VfX9QwqJyDzzSwxJEecmhkGz7T4YjKFmMvNJhRYQhPHPhG1WY0lW7s0JBfI-XrG1ILJScz6QxW0ruS7LQvLgRcu7FpdO2NvM1l3B2GkfNcOecLcehCEYkmlH0-0hVJ-v2OGJZ-DoO3x-R5vu_LcHmXjZboi-lpOi-CLdlY1up8W58Rkk0B2nKz0ac5KFgyiTuJbEWPlc8JdJ8MBtMOp5GGVHuBduLn0a4IG9d9rEiLr4lsw5G9_XdC2HdG4FgJSX2EmsP_LwHf5ae15BXOdcp5FjYx0nGvcRJ5Bg-MNYFSv_Wnm3hBMYfLEuDWCiTYqU0Qe37jGzPdZzNRF1uUCmbYaHdHlw',
+          '/images/mentors/neha.jpg',
       },
       {
         name: 'Rohit Verma',
         role: 'Content & Link Building Strategist',
         experience: '8+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuArY3yVaLJ85AOLtk6E16nLqSPiPd_EH9HqSSfHZSbubRwQdSpSX6MFV-6x3SecbhW6-9m-b6GcKzVRn/WkTq6oRREk4dR9c-P7u1RdUwAirt2JzNDiqEm-96E2iJFnDlTUjHrJPR8gbP0KsgJ1KKLDmCXhErDjBZ0QHDemit-RhNjVZlos1M1YWWb1JU8wJULFQJ9DDdf1Vfj2wmBa7hXRhT7PB7CfH6fVEKXDM3Z3DXDBCZH8uuh9Gi0XVc0VY7WsjvsNL2dX_U9c-m4ZaJ7XdCJ9qFWFJAkf2vjUvoxLZnVAstSg1FUz9RSME55O0mWmCXHAL5qo9xMqEHzWYc2AQhf7W',
+          '/images/mentors/rohit.jpg',
       },
     ],
     gains: [
@@ -259,25 +261,28 @@ export const defaultCourses = [
         description: 'Interview prep and direct referrals to our network of 80+ hiring partners.',
       },
     ],
-    gainsImage: defaultHeroImage,
+    gainsImage: '/images/gains-course2.jpg',
     successStories: [
       {
         quote:
           '"The live audits changed everything — I got an SEO junior role at an agency within a month of finishing."',
         name: 'Meera G.',
         role: 'SEO Executive',
+        image: '/images/students/meera.jpg',
       },
       {
         quote:
           '"I finally rank my own business locally. The technical SEO module alone was worth the entire course."',
         name: 'Vikram S.',
         role: 'Local Business Owner',
+        image: '/images/students/vikram.jpg',
       },
       {
         quote:
           '"Clear, practical, and mentor-supported. Best weekend course I have taken during my 9-to-5."',
         name: 'Tanvi R.',
         role: 'Marketing Associate',
+        image: '/images/students/tanvi.jpg',
       },
     ],
     modules: [
@@ -339,7 +344,7 @@ export const defaultCourses = [
         'Master organic growth, paid ad strategy, and creative performance marketing across Meta, Instagram, and Google. Run real ad accounts and scale campaigns with measurable ROI.',
       ctaLabel: 'Request a Call Back',
       ctaHref: '#enroll',
-      image: defaultHeroImage,
+      image: '/images/hero-social.jpg',
       imageAlt: 'Learners planning social media ad campaigns in a training studio',
       floatingStat: { value: '3.2x', label: 'Avg. ROAS' },
       stats: [
@@ -380,21 +385,21 @@ export const defaultCourses = [
         role: 'Performance Marketing Head',
         experience: '11+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXe21Xhf5EOyQ6uC0ZPk5iXRzDtSk1v6eQdJX1mmQjHc4BqzVH9zFz20CN6nXjO4YVD_wsLKT68G0IkPi7hJI0vrbhLJKRxVdrr0G4N0sJ0ED0iePT_2TJo3g5Cvrv4VdVv44HvqBHnPMhQ5IX4CIy3ilSPqHrq9ELtSy6xK6nutnzynfHYKVQLbiIZSM4yMyGzLJfK4H7V8rYTrCby8LP2gA-i56d1jjXb8I2l4OhvArK5Y49C0a',
+          '/images/mentors/sana.jpg',
       },
       {
         name: 'Kabir Anand',
         role: 'Social Media & Influencer Strategist',
         experience: '8+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCcYps3hlGHfpL3gLOOplP4wjf1plbX3a4D9mhRrLs8UZ_IWC3fqMFDzY3bTrc6BQ7v1Vv2F3ssYQ2nXpj2zU0hLkZQ3bXj5k4qY1g9OeS_jHZqBqnW0pM3vTtKQgpG9Xv3gegHkm1R3PxN0BqGZ3iVlY0GRiJj6G0YxZxM1vP',
+          '/images/mentors/kabir.jpg',
       },
       {
         name: 'Divya Nair',
         role: 'Creative & Copy Lead',
         experience: '7+ Years Experience',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuAbnMYUCRZZLJdwPCp2lGnWgJDJ3o4uS_r_FVQ3v6dJHI7pl0bBqHvQ0JK2WDj_hR2L_s2LG0e0dCyXjJ8VhP2j6C0eKaNpKvqzpG8g0v0sVlNnH4gHQyQfMkdHCbNOFovLFr2voJ5T1rFVyj2sV1LX7',
+          '/images/mentors/divya.jpg',
       },
     ],
     gains: [
@@ -414,25 +419,28 @@ export const defaultCourses = [
         description: 'Leave with documented case studies and ad accounts you can show employers and clients.',
       },
     ],
-    gainsImage: defaultHeroImage,
+    gainsImage: '/images/gains-course3.jpg',
     successStories: [
       {
         quote:
           '"I went from zero to managing a ₹10L monthly ad budget in 4 months after this program."',
         name: 'Ishita B.',
         role: 'Paid Media Executive',
+        image: '/images/students/ishita.jpg',
       },
       {
         quote:
           '"The live ad labs taught me more than years of tutorials. My ROAS doubled by week six."',
         name: 'Aditya J.',
         role: 'Digital Marketer',
+        image: '/images/students/aditya.jpg',
       },
       {
         quote:
           '"I now freelance for three D2C brands. The creative and funnel training was a game changer."',
         name: 'Farhan K.',
         role: 'Freelance Performance Marketer',
+        image: '/images/students/farhan.jpg',
       },
     ],
     modules: [
@@ -511,7 +519,7 @@ export function emptyCourse() {
     mentors: [{ name: '', role: '', experience: '', image: '' }],
     gains: [{ icon: '', title: '', description: '' }],
     gainsImage: '',
-    successStories: [{ quote: '', name: '', role: '' }],
+    successStories: [{ quote: '', name: '', role: '', image: '', initial: '' }],
     modules: [{ icon: '', title: '', topics: [''] }],
     faqs: [{ question: '', answer: '' }],
     finalCta: { heading: '', description: '', ctaLabel: 'Book Your Free Demo', ctaHref: '#demo' },
@@ -552,6 +560,12 @@ function mergeShape(template, value) {
     for (const key of Object.keys(template)) {
       out[key] = mergeShape(template[key], value[key])
     }
+    // Preserve extra keys that exist in the stored value but not in the
+    // template (e.g. images on list items). Normalization is meant to fill
+    // missing fields, never to delete data the admin entered.
+    for (const key of Object.keys(value)) {
+      if (!(key in out)) out[key] = value[key]
+    }
     return out
   }
   return value === undefined ? template : value
@@ -579,10 +593,30 @@ function readStored() {
   }
 }
 
+// Repair for previously saved courses: older versions of normalizeCourse
+// stripped `image` / `initial` from success stories (missing from the empty
+// template), so courses saved via the admin panel lost their student photos.
+// Restore them from the defaults for matching course ids. The admin form has
+// no editor for these fields, so a blank value can only come from the old bug.
+function repairStoryImages(course) {
+  const def = defaultCourses.find((d) => d.id === course.id)
+  if (!def) return course
+  const defStories = def.successStories || []
+  course.successStories = (course.successStories || []).map((story, i) => {
+    const defStory = defStories[i]
+    if (!defStory) return story
+    if (!story.image && defStory.image) story.image = defStory.image
+    if (!story.initial && defStory.initial) story.initial = defStory.initial
+    return story
+  })
+  return course
+}
 export function getCourses() {
   const stored = readStored()
   // Normalize stored courses so missing nested fields never crash rendering.
-  return stored ? stored.map(normalizeCourse) : defaultCourses
+  return stored
+    ? stored.map((course) => repairStoryImages(normalizeCourse(course)))
+    : defaultCourses
 }
 
 // --- Reactive store (frontend-only) ---------------------------------------

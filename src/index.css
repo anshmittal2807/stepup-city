@@ -139,3 +139,176 @@
   }
 }
 
+/* Anchor links sit below the fixed navbar. */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* ============================================================
+   Beauty & motion system
+   ============================================================ */
+
+/* Gradient text */
+.text-gradient-primary {
+  background-image: linear-gradient(
+    120deg,
+    var(--color-primary) 0%,
+    var(--color-primary-container) 55%,
+    #ff9a9e 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-white {
+  background-image: linear-gradient(120deg, #ffffff 0%, #ffe3e3 60%, #ffb3ac 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glow shadows built from the brand colour */
+.shadow-glow {
+  box-shadow: 0 12px 32px -12px color-mix(in srgb, var(--color-primary-container) 55%, transparent);
+}
+.shadow-glow-lg {
+  box-shadow: 0 24px 64px -20px color-mix(in srgb, var(--color-primary-container) 65%, transparent);
+}
+
+/* Decorative repeating backgrounds */
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(0 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.bg-dots-light {
+  background-image: radial-gradient(rgb(255 255 255 / 0.16) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+}
+.bg-dots-dark {
+  background-image: radial-gradient(rgb(0 0 0 / 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* ----- Keyframes ----- */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes float-x {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+@keyframes bar-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+.animate-float-x {
+  animation: float-x 7s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 26s linear infinite;
+}
+.animate-spin-slower {
+  animation: spin-slow 42s linear infinite;
+}
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s ease-in-out infinite;
+}
+.animate-bar {
+  transform-origin: bottom;
+  animation: bar-grow 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.marquee-front:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ----- Scroll reveal ----- */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ----- Accessibility: honour reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-float,
+  .animate-float-slow,
+  .animate-float-x,
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-spin-slower,
+  .animate-pulse-soft,
+  .animate-bar {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary);
+}
+

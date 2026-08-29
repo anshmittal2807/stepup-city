@@ -15,7 +15,6 @@ function CoursesPage() {
   const { slug } = useParams()
   const courses = useCourses()
   const course = slug ? courses.find((c) => c.slug === slug) : courses[0]
-  const a = 10 ;
   // /courses (no slug) redirects to the first available course.
   if (!slug && course) {
     return <Navigate to={`/courses/${course.slug}`} replace />

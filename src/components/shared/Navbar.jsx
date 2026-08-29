@@ -26,15 +26,17 @@ function Navbar() {
 
   return (
     <header
-      className={`bg-surface font-body-md text-body-md fixed top-0 w-full z-50 border-b border-outline-variant transition-all duration-300 ${
-        scrolled ? 'shadow-md' : 'shadow-sm'
+      className={`bg-surface/85 font-body-md text-body-md fixed top-0 z-50 w-full border-b border-outline-variant backdrop-blur-xl transition-all duration-300 ${
+        scrolled ? 'shadow-lg' : 'shadow-sm'
       }`}
     >
-      <div className="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-4">
+      <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-primary via-primary-container to-primary-fixed-dim"></div>
+
+      <div className="mx-auto flex h-20 max-w-container-max items-center justify-between gap-4 px-margin-mobile md:px-margin-desktop">
         <Link
           to="/"
           onClick={closeMenu}
-          className="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2"
+          className="font-headline-md text-headline-md flex items-center gap-2 font-bold text-primary"
         >
           <img
             src="https://stepupcity.com/wp-content/uploads/2023/05/Digital-Marketing-Institute-Agency-3.png"
@@ -43,13 +45,13 @@ function Navbar() {
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) =>
             link.active ? (
               <Link
                 key={link.label}
                 to="/"
-                className="text-primary font-bold border-b-2 border-primary pb-1"
+                className="border-b-2 border-primary pb-1 font-bold text-primary"
               >
                 {link.label}
               </Link>
@@ -57,7 +59,7 @@ function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200"
+                className="font-medium text-on-surface-variant transition-colors duration-200 hover:text-primary"
               >
                 {link.label}
               </a>
@@ -65,12 +67,12 @@ function Navbar() {
           )}
 
           {/* Courses dropdown */}
-          <div className="relative group">
-            <button className="flex items-center gap-1 text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 focus:outline-none">
+          <div className="group relative">
+            <button className="flex items-center gap-1 font-medium text-on-surface-variant transition-colors duration-200 hover:text-primary focus:outline-none">
               Our Courses
               <span className="material-symbols-outlined text-sm">expand_more</span>
             </button>
-            <div className="absolute top-full left-0 mt-2 w-64 bg-surface border border-outline-variant shadow-lg rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="invisible absolute top-full left-0 z-50 mt-2 w-64 rounded-xl border border-outline-variant bg-surface opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="p-2">
                 {courses.length === 0 ? (
                   <span className="block px-4 py-3 text-body-md text-on-surface-variant">
@@ -81,7 +83,7 @@ function Navbar() {
                     <Link
                       key={course.id}
                       to={`/courses/${course.slug}`}
-                      className="block px-4 py-3 text-body-md text-on-surface-variant hover:bg-primary-container hover:text-on-primary rounded-lg transition-colors"
+                      className="block rounded-lg px-4 py-3 text-body-md text-on-surface-variant transition-colors hover:bg-primary-container hover:text-on-primary"
                     >
                       {course.title}
                     </Link>
@@ -89,7 +91,7 @@ function Navbar() {
                 )}
                 <Link
                   to="/admin"
-                  className="block px-4 py-3 text-body-md text-on-surface-variant border-t border-outline-variant mt-1 pt-3 font-label-bold text-primary hover:bg-surface-container-low rounded-lg transition-colors"
+                  className="mt-1 block rounded-lg border-t border-outline-variant px-4 py-3 pt-3 font-label-bold text-body-md text-primary transition-colors hover:bg-surface-container-low"
                 >
                   Manage Courses (Admin)
                 </Link>
@@ -98,8 +100,8 @@ function Navbar() {
           </div>
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <button className="bg-primary-container text-on-primary font-label-bold text-label-bold px-6 py-3 rounded hover:bg-primary transition-colors duration-300 shadow-sm active:scale-95">
+        <div className="hidden items-center gap-4 md:flex">
+          <button className="bg-gradient-to-r from-primary to-primary-container font-label-bold text-label-bold rounded-xl px-6 py-3 text-on-primary shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg active:scale-95">
             Get a Free Audit
           </button>
         </div>
@@ -110,7 +112,7 @@ function Navbar() {
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
-          className="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-on-surface-variant transition-colors hover:bg-surface-container-low lg:hidden"
         >
           <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
         </button>
@@ -118,24 +120,23 @@ function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-surface border-t border-outline-variant shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto">
-          <div className="px-margin-mobile py-4 space-y-1">
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-outline-variant bg-surface shadow-lg lg:hidden">
+          <div className="space-y-1 px-margin-mobile py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.to || { pathname: '/', hash: link.href }}
                 onClick={closeMenu}
-                className={`block px-4 py-3 rounded-lg transition-colors ${
+                className={`block rounded-lg px-4 py-3 transition-colors ${
                   link.active
-                    ? 'text-primary font-bold bg-surface-container-low'
-                    : 'text-on-surface-variant font-medium hover:bg-surface-container-low'
+                    ? 'bg-surface-container-low font-bold text-primary'
+                    : 'font-medium text-on-surface-variant hover:bg-surface-container-low'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-
-            <div className="pt-2 mt-2 border-t border-outline-variant">
+<div className="mt-2 border-t border-outline-variant pt-2">
               <p className="px-4 pb-1 text-xs font-label-bold uppercase tracking-wider text-secondary">
                 Our Courses
               </p>
@@ -147,7 +148,7 @@ function Navbar() {
                     key={course.id}
                     to={`/courses/${course.slug}`}
                     onClick={closeMenu}
-                    className="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container-low rounded-lg"
+                    className="block rounded-lg px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container-low"
                   >
                     {course.title}
                   </Link>
@@ -156,13 +157,13 @@ function Navbar() {
               <Link
                 to="/admin"
                 onClick={closeMenu}
-                className="block px-4 py-2 text-body-md font-label-bold text-primary hover:bg-surface-container-low rounded-lg"
+                className="block rounded-lg px-4 py-2 text-body-md font-label-bold text-primary hover:bg-surface-container-low"
               >
                 Manage Courses (Admin)
               </Link>
             </div>
 
-            <button className="w-full mt-3 bg-primary-container text-on-primary font-label-bold text-label-bold px-6 py-3 rounded hover:bg-primary transition-colors duration-300">
+            <button className="bg-gradient-to-r from-primary to-primary-container font-label-bold text-label-bold mt-3 w-full rounded-xl px-6 py-3 text-on-primary shadow-glow transition-all duration-300 hover:shadow-glow-lg">
               Get a Free Audit
             </button>
           </div>
